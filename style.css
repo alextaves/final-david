@@ -1,0 +1,1021 @@
+:root {
+    --purple: #59487e;
+    --ltpurple: hsl(260, 28%, 65%);
+    --light-grey: #bac1ca;
+    --gradient: linear-gradient(rgba(172, 40, 233, 0.144), rgba(148, 177, 245, 0.281));
+    --main-text: #100815;
+    --main-background: rgba(255, 255, 255, 0.5);
+    --opacity-low: linear-gradient(rgba(236, 244, 236, 0.5), rgba(16, 1, 50, 0.817));
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    color: #242524;
+    font-size: 1rem;
+    height: 100vh;
+    position: relative;
+    
+
+}
+/* home background image */
+
+.body-image{
+    background-image: var(--gradient),url(model_images/menhaircut.jpg);
+    /* height: 100%; */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* logo and header */
+
+.graphic-logo{
+    /* border: solid 2px green; */
+    height: 70px;
+}
+.full-logo {
+    position: absolute;
+    top: .8em;
+    left:.5em;
+    display: flex;
+    align-items: center;
+    margin-left: .5em;
+}
+.name-logo{
+    text-transform: uppercase;
+    font-size: 1rem;
+    line-height: 1.3;
+    letter-spacing: 0.243em;
+    color: var(--purple);
+    margin-left: .5em;
+}
+.name-logo-container {
+    /* border: 2px solid green; */
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.navbar-toggle {
+    /* grid-column: 4 /5; */
+    position: absolute;
+    right: .5em;
+    top: .5em;
+    font-size: 2rem;
+    color: var(--purple);
+    z-index:10000;
+}
+.navbar-toggle:hover,
+.navbar-toggle:focus {
+    cursor: pointer;
+    transition: 0.3s all ease;
+    color: #f4f625
+}
+
+.fas{
+    line-height: 45px;
+}
+/* navigation grid that is set to absolute - */
+
+.navigation-grid{
+   
+    /* border: 2px solid green; */
+    position: absolute;
+    width: 70vw;
+    left: 225px;
+    /* max-width: 1000px; */
+    top: -200px;
+    transition: 0.8s all ease;
+    /* height: 85px; */
+    z-index: 9999;
+    display: grid;
+    /* grid-template-columns: 100vw; */
+    grid-template-columns: auto ;
+    grid-template-rows: 85px;
+}
+.navOpen {
+    /* transition: 0.8s all ease; */
+    top: 0px;
+}
+.navbar {
+    /* border: solid 2px orange; */
+    /* position: absolute; */
+    /* top: -200px; */
+    grid-column: 1 /2;
+    background: var(--purple);
+    padding-right: 1em;
+    padding-left: 1em;
+}
+
+.main-nav {
+    /* border: 2px solid orange; */
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: space-around;
+    align-items: center;
+}
+.main-nav li{
+    list-style: none;
+    line-height: 75px;
+}
+.main-nav li a {
+    text-decoration: none;
+    color: #352a3d;
+    letter-spacing: 0.135em;
+    font-size: 1.1rem;
+}
+.main-nav li a:hover,
+.mai-nav li a:focus {
+    color: whitesmoke;
+}
+
+@media(max-width: 925px){
+    .navigation-grid{
+        width: 65vw;
+        
+    }
+    .main-nav li a {
+        font-size: 1rem;
+    }
+}
+@media(max-width: 800px){
+    .navigation-grid{
+        width: 62vw;
+    }
+    .main-nav li a {
+        font-size: .9rem;
+    }
+}
+@media(max-width: 725px){
+    .navigation-grid{
+        width: 25vw;
+        left: 100%;
+        top: 65px;
+        display:none;
+        /* grid-template-columns: auto 200px; */
+        grid-template-rows: 50vh;
+    }
+    .navOpen {
+        transition: 0.8s all ease;
+        top: 65px;
+        left: 75%;
+        display: block;
+    }
+    .navbar {
+        
+        /* grid-column: 2 /3; */
+        background: var(--purple);
+        padding-right: 1em;
+        padding-left: 1em;
+    }
+    .main-nav li a {
+        font-size: .9rem;
+    }
+    .main-nav {
+        /* border: 2px solid orange; */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: flex-start;
+    }
+}
+
+.body-grid-container {
+    /* border: solid 2px green; */
+    height: 100%;
+    display: grid;
+    /* min-width: 950px; */
+    grid-template-columns: 3em auto 1em;
+    grid-template-rows: 85px auto 50px;
+    grid-template-areas: 
+        "header header header"
+        ". main ."
+        "footer footer footer";
+}
+
+.header {
+    /* border: solid 2px green; */
+    grid-area: header;
+    display: flex;
+    justify-content: space-between;
+}
+.main-content{
+    grid-area: main;
+    /* border: solid 2px green; */
+    height: 100%;
+}
+.footer {
+    /* border: solid 2px green; */
+    grid-area: footer;
+    
+}
+
+
+
+
+
+
+.main-content{
+    display: grid;
+    /* height: 100%; */
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 5px;
+    grid-template-areas: 
+        "statement buttons"
+        ". ."
+}
+.main-mantra{
+    grid-area: statement;
+    align-self: center;
+    transition: all 0.5s linear;
+}
+.main-fade {
+    opacity: 0;
+}
+.mainExit {
+   margin-left: 1500px;
+}
+main.main-mantra h2 {
+    
+    font-size: 15vh;
+    text-transform: uppercase;
+    line-height: 1.2;
+    color: var(--main-background);
+}
+.buttons-stacked{
+    grid-area: buttons;
+    align-self: end;
+    justify-self: end;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin-bottom: 1em;
+}
+/* buttons */
+
+.button {
+    font-size: 1.75rem;
+    margin-top: .35em;
+    color: var(--main-background);
+    font-weight: bold;
+    text-decoration: none;
+}
+.button-chat{
+    border-bottom: 5px solid var(--main-background);
+}
+.button-book{
+    border-bottom: 5px solid var(--main-background);
+}
+.button-chat:hover,
+.button-chat:focus{
+    border-bottom: 5px solid #37912f;
+}
+.button-book:hover,
+.button-book:focus{
+    border-bottom: 5px solid  #003cb0;
+}
+.footer {
+    background: var(--main-background);
+    bottom: 0px;
+    height: 50px;
+    width: 100%;
+    /* border-right: 200px solid var(--main-background); */
+    padding-left: .75em;
+    color: var(--purple);
+    line-height: 1.4;
+}
+footer h3 {
+    color: var(--purple);
+}
+footer p {
+    
+    font-size: 1rem;
+    line-height: .8em;
+}
+footer p span {
+    color: #003cb0;
+    background: var(--main-background);
+    padding-right: 50px;
+}
+@media(max-width: 450px){
+    .number{ 
+        display: none;
+    }
+    .call {
+        display: inline;
+    }
+}
+@media(min-width: 451px){
+    .number{ 
+        display: inline;
+    }
+    .call {
+        display: none;
+    }
+}
+
+@media(max-width: 600px){
+    .main-content{
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "statement"
+            "buttons"
+    }
+    main.main-mantra h2 {
+        font-size: 7rem;
+    }
+    
+}
+@media(max-width: 500px){
+   
+    main.main-mantra h2 {
+        font-size: 6rem;
+    }
+}
+@media(max-width: 425px){
+   
+    main.main-mantra h2 {
+        font-size: 5rem;
+    }
+}
+
+/* services page*/
+
+.service-body-background{
+    background: #f2f0ed;
+    display: flex;
+    justify-content: center;
+}
+.service-grid-container{
+    grid-area: main;
+    align-self: start;
+    margin-top: 40px;
+}
+.service-grid-container {
+    display: grid;
+    grid-template-columns: minmax(250px, 500px) 25px minmax(auto, 300px) auto;
+    grid-template-rows: repeat(5, auto auto auto auto auto);
+    /* grid-row-gap: 1em; */
+    grid-template-areas: 
+        "image01 . name01 name01"
+        "image01 . title01 title01"
+        "image01 . items01 items01"
+        "image01 . . book01"
+        ". . bar-service1 bar-service1"
+        "image02 . name02 name02"
+        "image02 . title02 title02"
+        "image02 . items02 items02"
+        "image02 . . book02"
+        ". . bar-service2 bar-service2"
+        "other other . . "
+        "wedding wedding . ."
+        "disclaim disclaim disclaim disclaim"
+        ". . . .";
+}
+
+.service-image-container{
+    margin-bottom: 5em;
+    min-height: 320px;
+}
+.service-name{
+    text-transform: uppercase;
+    font-size: 8vw;
+    color:  rgba(6, 6, 6, 0.187);
+    line-height: 0.875em;
+    letter-spacing: -0.021em;
+    margin: 0 0 .25em 0;
+}
+.other-service-heading{
+    text-transform: uppercase;
+    font-size: 4rem;
+    color:  rgba(6, 6, 6, 0.187);
+    line-height: 0.875em;
+    letter-spacing: -0.021em;
+    margin: 0 0 .25em 0;
+}
+.service-title{
+    line-height: 1.2em;
+    letter-spacing: 0.027em;
+    font-size: 1.7rem;
+    margin-top: 0;
+    color: var(--purple)
+}
+.stylist-about{
+    line-height: 1.3em;
+    letter-spacing: 0.018em;
+    margin: .25em 0 1em 0;
+}
+.service-disclaim{
+    font-size: 1rem;
+    line-height: 1.2em;
+    color:  rgba(6, 6, 6, 0.187);
+    margin: .5em 1em .5em 0;
+    
+}
+.service-disclaim-bottom{
+    margin: .2em 1em .5em 0;
+}
+.service-detail-disclaim{
+    
+    margin: .2em 1em .5em 0;
+    font-size: 1rem;
+    color: rgba(6, 6, 6, 0.75);
+}
+.bar {
+    margin: 1em 0 2.5em 0;
+    width: 100%;
+    height: 25px;
+    background:  rgba(6, 6, 6, 0.05);
+}
+.bar01 {
+    grid-area: bar-service1;
+}
+.bar02 {
+    grid-area: bar-service2;
+}
+/* .bar3 {
+    grid-area: bar3;
+}
+.bar4 {
+    grid-area: bar4;
+} */
+
+
+.cut-image{
+    grid-area: image01;
+    width: 100%;
+}
+.service-cut-heading{
+    grid-area: name01;
+}
+.service-cut-subheading{
+    grid-area: title01;
+}
+.service-cut-items{
+    grid-area: items01;
+}
+.cut-book {
+    grid-area: book01;
+    justify-self: end;
+}
+
+.colour-image{
+    grid-area: image02;
+    width: 100%;
+}
+.service-colour-heading{
+    grid-area: name02;
+
+}
+.service-colour-subheading{
+    grid-area: title02;
+}
+.service-colour-items{
+    grid-area: items02;
+}
+.colour-book {
+    grid-area: book02;
+    justify-self: end;
+}
+
+.other-services {
+    grid-area: other;
+}   
+
+.disclaimer {
+    grid-area: disclaim;
+    margin-bottom: 2em;
+    margin-right: 2em;
+    color:  rgba(6, 6, 6, 0.187);
+}
+.wedding {
+    grid-column: 3
+}
+
+.c{
+    color: #ee948c;
+}
+.o{
+    color: rgb(245, 169, 110);
+}
+.l{
+    color: rgb(245, 245, 136);
+}
+.o2{
+    color: rgb(152, 233, 152);
+}
+.u{
+    color: rgb(112, 112, 249);
+}
+.r{
+    color: rgb(200, 152, 245);
+}
+.service-image {
+    /* max-width: 600px; */
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    min-width: 250px;
+    min-height: 250px;
+    /* justify-self: end; */
+
+}
+.h2-disclaimer {
+    margin-bottom:1em;
+}
+.service-book{
+    justify-self: end;
+    align-self: start;
+    margin-right: 1em;
+}
+
+.service-items {
+    margin-right: 1em;
+}
+
+
+
+@media(max-width: 750px){
+    .service-grid-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        /* grid-template-rows: repeat(5, auto auto auto auto auto); */
+        /* grid-row-gap: 1em; */
+        grid-template-areas: 
+            "name01"
+            "image01"
+            "title01"
+            "items01"
+            "book01"
+            "bar-service1"
+            "name02"
+            "image02"
+            "title02"
+            "items02"
+            "book02"
+            "bar-service2 "
+            "other  "
+            "wedding"
+            "disclaim "
+            ".";
+    }
+    .service-name{
+        font-size: 5rem;
+        margin: 0 0 .2em 0;
+    }
+    .service-image-container{
+        margin-bottom: 1em;
+    }
+    .service-title{
+        line-height: 1.2em;
+        letter-spacing: 0.027em;
+        font-size: 1.4rem;
+        margin-top: 0;
+    }
+    .service-disclaim{
+        font-size: 1rem;
+        line-height: 1.2em;
+        color:  rgba(6, 6, 6, 0.187);
+        margin-top: .25em;
+        margin-bottom: .5em;
+    }
+    .other-service-heading{
+        text-transform: uppercase;
+        font-size: 3rem;
+        color:  rgba(6, 6, 6, 0.187);
+        line-height: 0.875em;
+        letter-spacing: -0.021em;
+        margin: 0 0 .25em 0;
+    }
+}
+
+
+/* stylist page */
+
+.body-background{
+    background: #f2f0ed;
+    display: flex;
+    justify-content: center;
+}
+
+.stylist-grid-container{
+    grid-area: main;
+    align-self: start;
+    margin-top: 40px;
+}
+
+.stylist-grid-container {
+    display: grid;
+    grid-template-columns: minmax(250px, 500px) 25px minmax(auto, 300px) minmax(auto, 350px);
+    grid-template-rows: repeat(5, auto auto auto auto auto);
+    /* grid-row-gap: 1em; */
+    grid-template-areas: 
+        "image1 . name1 name1"
+        "image1 . title1 title1"
+        "image1 . about1 about1"
+        "image1 . instagram1 book1"
+        ". . bar1 bar1"
+        "image2 . name2 name2"
+        "image2 . title2 title2"
+        "image2 . about2 about2"
+        "image2 . instagram2 book2"
+        ". . bar2 bar2"
+        "image3 . name3 name3"
+        "image3 . title3 title3"
+        "image3 . about3 about3"
+        "image3 . instagram3 book3"
+        ". . bar3 bar3"
+        "image4 . name4 name4"
+        "image4 . title4 title4"
+        "image4 . about4 about4"
+        "image4 . instagram4 book4"
+        ". . bar4 bar4"
+        "image5 . name5 name5"
+        "image5 . title5 title5"
+        "image5 . about5 about5"
+        "image5 . instagram5 book5"
+        ". . bar5 bar5"
+        "image6 . name6 name6"
+        "image6 . title6 title6"
+        "image6 . about6 about6"
+        "image6 . instagram6 book6"
+        ". . bar6 bar6";
+        
+}
+.stylist-name{
+    text-transform: uppercase;
+    font-size: 8vw;
+    color:  rgba(6, 6, 6, 0.187);
+    line-height: 0.875em;
+    letter-spacing: -0.021em;
+    margin: 0 0 .25em 0;
+}
+.stylist-title{
+    line-height: 1.2em;
+    letter-spacing: 0.027em;
+    font-size: 1.3rem;
+    margin-top: 0;
+    margin-bottom: .5em;
+    color: var(--purple)
+}
+.stylist-about{
+    line-height: 1.3em;
+    letter-spacing: 0.018em;
+    margin: .25em 1em 1em 0;
+}
+
+
+
+.image-container{
+    margin-bottom: 5em;
+    min-height: 320px;
+}
+.bar {
+    margin: 1em 0 2.5em 0;
+    width: 100%;
+    height: 25px;
+    background:  rgba(6, 6, 6, 0.05);
+}
+.bar1 {
+    grid-area: bar1;
+}
+.bar2 {
+    grid-area: bar2;
+}
+.bar3 {
+    grid-area: bar3;
+}
+.bar4 {
+    grid-area: bar4;
+}
+.bar5 {
+    grid-area: bar5;
+}
+.bar6 {
+    grid-area: bar6;
+}
+
+.stylist-button {
+    font-size: 1.5rem;
+    margin-top: .35em;
+    margin-right: 1em;
+    color: rgba(6, 6, 6, 0.187);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.stylist-button{
+    border-bottom: 5px solid rgba(6, 6, 6, 0.187);
+}
+.stylist-button:hover,
+.stylist-button:focus{
+    border-bottom: 5px solid #003cb0;
+}
+
+.instagram-link {
+    font-size: 1.25rem;
+    margin-top: .35em;
+    color: var(--ltpurple);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.david-image{
+    grid-area: image1;
+    width: 100%;
+}
+.david-name{
+    grid-area: name1;
+    
+    
+}
+.david-title{
+    grid-area: title1;
+    
+    align-self: start;
+}
+.david-about{
+    grid-area: about1;
+    /* margin: 0; */
+    
+    
+}
+.david-instagram{
+   grid-area: instagram1;
+   
+   justify-self: start;
+   align-self: start;
+   
+}
+.david-book{
+    grid-area: book1;
+    
+    justify-self: end;
+    align-self: start;
+    
+}
+
+.jamie-image{
+    grid-area: image2;
+    width: 100%;
+    
+    
+}
+.jamie-name{
+    grid-area: name2;
+    
+    padding-left: 0;
+}
+.jamie-title{
+    grid-area: title2;
+    
+    align-self: start;
+}
+.jamie-about{
+    grid-area: about2;
+   
+}
+.jamie-instagram{
+   grid-area: instagram2;
+   
+   justify-self: start;
+   align-self: start;
+}
+.jamie-book{
+    grid-area: book2;
+    
+    justify-self: end;
+    align-self: start;
+
+}
+.stacey-image{
+    grid-area: image3;
+    width: 100%;
+}
+.stacey-name{
+    grid-area: name3;
+    
+    padding-left: 0;
+}
+.stacey-title{
+    grid-area: title3;
+    
+    align-self: start;
+}
+.stacey-about{
+    grid-area: about3;
+    
+}
+.stacey-instagram{
+   grid-area: instagram3;
+   
+   justify-self: start;
+   align-self: start;
+}
+.stacey-book{
+    grid-area: book3;
+    
+    justify-self: end;
+    align-self: start;
+
+}
+
+.giselle-image{
+    grid-area: image4;
+    width: 100%;
+}
+.giselle-name{
+    grid-area: name4;
+    
+    padding-left: 0;
+}
+.giselle-title{
+    grid-area: title4;
+    
+    align-self: start;
+}
+.giselle-about{
+    grid-area: about4;
+    
+}
+.giselle-instagram{
+   grid-area: instagram4;
+   
+   justify-self: start;
+   align-self: start;
+}
+.giselle-book{
+    grid-area: book4;
+    
+    justify-self: end;
+    align-self: start;
+
+}
+
+.jhade-image{
+    grid-area: image5;
+    width: 100%;
+}
+.jhade-name{
+    grid-area: name5;
+   
+    padding-left: 0;
+}
+.jhade-title{
+    grid-area: title5;
+    
+    align-self: start;
+}
+.jhade-about{
+    grid-area: about5;
+    
+}
+.jhade-instagram{
+   grid-area: instagram5;
+   
+   justify-self: start;
+   align-self: start;
+}
+.jhade-book{
+    grid-area: book5;
+    
+    justify-self: end;
+    align-self: start;
+
+}
+
+.elle-image{
+    grid-area: image6;
+    width: 100%;
+}
+.elle-name{
+    grid-area: name6;
+    
+    padding-left: 0;
+}
+.elle-title{
+    grid-area: title6;
+    
+    align-self: start;
+}
+.elle-about{
+    grid-area: about6;
+    
+}
+.elle-instagram{
+   grid-area: instagram6;
+   
+   justify-self: start;
+   align-self: start;
+}
+.elle-book{
+    grid-area: book6;
+    
+    justify-self: end;
+    align-self: start;
+
+}
+.stylist-image {
+    /* max-width: 600px; */
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    min-width: 250px;
+    min-height: 250px;
+    /* justify-self: end; */
+}
+
+@media(max-width: 750px){
+    .body-grid-container {
+        width: 100%;
+        display: grid;
+        /* min-width: 950px; */
+        grid-template-columns: 1em auto 1em;
+        grid-template-rows: 85px auto 50px;
+        grid-template-areas: 
+            "header header header"
+            ". main ."
+            "footer footer footer";
+    }
+    .stylist-grid-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        /* grid-template-rows: repeat(6, auto auto auto auto auto auto); */
+        /* grid-row-gap: 1em; */
+        grid-template-areas: 
+            "name1 name1"   
+            "image1 image1"
+            "title1 title1"
+            "about1 about1"
+            "instagram1 book1"
+            "bar1 bar1"
+
+            "name2 name2"   
+            "image2 image2"
+            "title2 title2"
+            "about2 about2"
+            "instagram2 book2"
+            "bar2 bar2"
+
+            "name3 name3"   
+            "image3 image3"
+            "title3 title3"
+            "about3 about3"
+            "instagram3 book3"
+            "bar3 bar3"
+
+            "name4 name4"   
+            "image4 image4"
+            "title4 title4"
+            "about4 about4"
+            "instagram4 book4"
+            "bar4 bar4"
+
+            "name5 name5"   
+            "image5 image5"
+            "title5 title5"
+            "about5 about5"
+            "instagram5 book5"
+            "bar5 bar5"
+
+            "name6 name6"   
+            "image6 image6"
+            "title6 title6"
+            "about6 about6"
+            "instagram6 book6"
+            "bar6 bar6";
+    }
+    .stylist-name{
+        text-transform: uppercase;
+        font-size: 5rem;
+        color:  rgba(6, 6, 6, 0.187);
+        line-height: 0.875em;
+        letter-spacing: -0.021em;
+        margin: 0 0 .2em 0;
+        
+    }
+    .stylist-title{
+        line-height: 1.2em;
+        letter-spacing: 0.027em;
+        font-size: 1.3rem;
+        margin-top: 0;
+    }
+    .stylist-about{
+        font-size: .875rem;
+        line-height: 1.3em;
+        letter-spacing: 0.018em;
+        margin: 0 0 1em 0;
+    }
+    .image-container{
+        margin-bottom: 1em;
+        min-height: 320px;
+    }
+    
+}
